@@ -2,14 +2,13 @@
  * Created by magbanua-ariel on 14/01/2016.
  */
 public class Car {
-
-    //car types
+    // car types
     public static final String SPORTS_UTILITY_VEHICLE = "SUV";
     public static final String LUXURY_VEHICLE = "LV";
     public static final String SPORTS = "Sports";
     public static final String ROADSTER = "Roadster";
 
-    //car body configurations
+    // car body configurations
     public static final String HATCHBACK = "Hatchback";
     public static final String CONVERTIBLE = "Convertible";
     public static final String FAMILY = "Family";
@@ -17,11 +16,11 @@ public class Car {
     public static final String VAN = "Van";
     public static final String PICK_UP = "Pickup";
 
-    //rent car status
+    // rent car status
     public static final String STATUS_AVAILABLE = "available";
     public static final String SOLD = "sold";
 
-    //attributes
+    // attributes
     private int id = -1;
     private String name = "";
     private String type = "";
@@ -36,19 +35,21 @@ public class Car {
     private double weightLimit = 0;
     private String status = "";
 
-    public Car(int id,
-               String name,
-               String type,
-               String body,
-               String manufacturer,
-               String engineName,
-               String fuelType,
-               int horsePower,
-               String wheelDiameter,
-               String wheelThickness,
-               int numberOfSeats,
-               double weightLimit,
-               String status) {
+    public Car(
+        int id,
+        String name,
+        String type,
+        String body,
+        String manufacturer,
+        String engineName,
+        String fuelType,
+        int horsePower,
+        String wheelDiameter,
+        String wheelThickness,
+        int numberOfSeats,
+        double weightLimit,
+        String status
+    ) {
 
         this.id = id;
         this.name = name;
@@ -65,19 +66,20 @@ public class Car {
         this.status = status;
     }
 
-    public Car(String name,
-               String type,
-               String body,
-               String manufacturer,
-               String engineName,
-               String fuelType,
-               int horsePower,
-               String wheelDiameter,
-               String wheelThickness,
-               int numberOfSeats,
-               double weightLimit,
-               String status) {
-
+    public Car(
+        String name,
+        String type,
+        String body,
+        String manufacturer,
+        String engineName,
+        String fuelType,
+        int horsePower,
+        String wheelDiameter,
+        String wheelThickness,
+        int numberOfSeats,
+        double weightLimit,
+        String status
+    ) {
         this.name = name;
         this.type = type;
         this.body = body;
@@ -196,8 +198,7 @@ public class Car {
         this.status = status;
     }
 
-    public static class SpecificationsBuilder{
-
+    public static class SpecificationsBuilder {
         private int id = -1;
         private String name = "";
         private String type = "";
@@ -212,22 +213,24 @@ public class Car {
         private double weightLimit = 0;
         private String status = "";
 
-        public SpecificationsBuilder(String name,
-                                     String type,
-                                     String manufacturer) {
-
+        public SpecificationsBuilder(
+            String name,
+            String type,
+            String manufacturer
+        ) {
             this.name = name;
             this.type = type;
             this.manufacturer = manufacturer;
         }
 
-        public SpecificationsBuilder(String name,
-                                     String type,
-                                     String manufacturer,
-                                     String engineName,
-                                     String fuelType,
-                                     int horsePower) {
-
+        public SpecificationsBuilder(
+            String name,
+            String type,
+            String manufacturer,
+            String engineName,
+            String fuelType,
+            int horsePower
+        ) {
             this.name = name;
             this.type = type;
             this.manufacturer = manufacturer;
@@ -237,19 +240,19 @@ public class Car {
         }
 
         public SpecificationsBuilder(
-                   String name,
-                   String type,
-                   String body,
-                   String manufacturer,
-                   String engineName,
-                   String fuelType,
-                   int horsePower,
-                   String wheelDiameter,
-                   String wheelThickness,
-                   int numberOfSeats,
-                   double weightLimit,
-                   String status) {
-
+            String name,
+            String type,
+            String body,
+            String manufacturer,
+            String engineName,
+            String fuelType,
+            int horsePower,
+            String wheelDiameter,
+            String wheelThickness,
+            int numberOfSeats,
+            double weightLimit,
+            String status
+        ) {
             this.name = name;
             this.type = type;
             this.body = body;
@@ -265,20 +268,20 @@ public class Car {
         }
 
         public SpecificationsBuilder(
-                   int id,
-                   String name,
-                   String type,
-                   String body,
-                   String manufacturer,
-                   String engineName,
-                   String fuelType,
-                   int horsePower,
-                   String wheelDiameter,
-                   String wheelThickness,
-                   int numberOfSeats,
-                   double weightLimit,
-                   String status) {
-
+            int id,
+            String name,
+            String type,
+            String body,
+            String manufacturer,
+            String engineName,
+            String fuelType,
+            int horsePower,
+            String wheelDiameter,
+            String wheelThickness,
+            int numberOfSeats,
+            double weightLimit,
+            String status
+        ) {
             this.id = id;
             this.name = name;
             this.type = type;
@@ -398,36 +401,38 @@ public class Car {
             this.body = body;
         }
 
-        public Car build(){
-
-            if(this.id>0){
-                return new Car( this.id,
-                                this.name,
-                                this.type,
-                                this.body,
-                                this.manufacturer,
-                                this.engineName,
-                                this.fuelType,
-                                this.horsePower,
-                                this.wheelDiameter,
-                                this.wheelThickness,
-                                this.numberOfSeats,
-                                this.weightLimit,
-                                this.status);
-            }
-            else {
-                return new Car( this.name,
-                                this.type,
-                                this.body,
-                                this.manufacturer,
-                                this.engineName,
-                                this.fuelType,
-                                this.horsePower,
-                                this.wheelDiameter,
-                                this.wheelThickness,
-                                this.numberOfSeats,
-                                this.weightLimit,
-                                this.status);
+        public Car build() {
+            if (this.id>0) {
+                return new Car(
+                    this.id,
+                    this.name,
+                    this.type,
+                    this.body,
+                    this.manufacturer,
+                    this.engineName,
+                    this.fuelType,
+                    this.horsePower,
+                    this.wheelDiameter,
+                    this.wheelThickness,
+                    this.numberOfSeats,
+                    this.weightLimit,
+                    this.status
+                );
+            } else {
+                return new Car(
+                    this.name,
+                    this.type,
+                    this.body,
+                    this.manufacturer,
+                    this.engineName,
+                    this.fuelType,
+                    this.horsePower,
+                    this.wheelDiameter,
+                    this.wheelThickness,
+                    this.numberOfSeats,
+                    this.weightLimit,
+                    this.status
+                );
             }
         }
     }
