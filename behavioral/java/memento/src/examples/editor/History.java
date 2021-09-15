@@ -1,3 +1,7 @@
+package examples.editor;
+
+import examples.editor.EditorState;
+
 import java.util.ArrayList;
 import java.util.List;
 

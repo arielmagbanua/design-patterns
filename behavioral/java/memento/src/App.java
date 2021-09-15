@@ -1,3 +1,6 @@
+import examples.editor.Editor;
+import examples.editor.History;
+
 public class App {
     public static void main(String[] args) throws Exception {
         var editor = new Editor();
