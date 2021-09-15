@@ -11,5 +11,7 @@ public class App {
 
         editor.setContent("c");
         editor.restore(history.pop());
+
+        System.out.println(editor.getContent());
     }
 }
