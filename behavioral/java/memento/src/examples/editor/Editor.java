@@ -1,3 +1,5 @@
+package examples.editor;
+
 public class Editor {
     private String content;
 
