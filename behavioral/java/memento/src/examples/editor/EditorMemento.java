@@ -1,6 +1,6 @@
 package examples.editor;
 
-public record EditorState(String content) {
+public record EditorMemento(String content) {
     public String getContent() {
         return content;
     }

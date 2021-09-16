@@ -3,12 +3,12 @@ package examples.editor;
 public class Editor {
     private String content;
 
-    public EditorState createState() {
-        return new EditorState(content);
+    public EditorMemento createState() {
+        return new EditorMemento(content);
     }
 
-    public void restore(EditorState state) {
-        content = state.getContent();
+    public void restore(EditorMemento memento) {
+        content = memento.getContent();
     }
 
     public String getContent() {

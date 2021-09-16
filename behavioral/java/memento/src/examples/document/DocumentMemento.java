@@ -1,11 +1,11 @@
 package examples.document;
 
-public class DocumentState {
+public class DocumentMemento {
     private String content;
     private String fontName;
     private int fontSize;
 
-    public DocumentState(String content, String fontName, int fontSize) {
+    public DocumentMemento(String content, String fontName, int fontSize) {
         this.content = content;
         this.fontName = fontName;
         this.fontSize = fontSize;

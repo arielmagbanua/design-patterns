@@ -4,17 +4,17 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class DocumentHistory {
-    private final Deque<DocumentState> mementos = new ArrayDeque<>();
+    private final Deque<DocumentMemento> mementos = new ArrayDeque<>();
 
-    public void push(DocumentState memento) {
+    public void push(DocumentMemento memento) {
         mementos.push(memento);
     }
 
-    public DocumentState pop() {
+    public DocumentMemento pop() {
         return mementos.pop();
     }
 
-    public DocumentState undo() {
+    public DocumentMemento undo() {
         // remove the last item
         mementos.pop();
 
