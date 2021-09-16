@@ -1,21 +1,23 @@
 package examples.document;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class DocumentHistory {
-    private final List<DocumentState> states = new ArrayList<>();
+    private final Deque<DocumentState> mementos = new ArrayDeque<>();
 
-    public void push(DocumentState state) {
-        states.add(state);
+    public void push(DocumentState memento) {
+        mementos.push(memento);
     }
 
     public DocumentState pop() {
-        var lastIndex = states.size() - 1;
-        var lastState = states.get(lastIndex);
+        return mementos.pop();
+    }
 
-        states.remove(lastState);
+    public DocumentState undo() {
+        // remove the last item
+        mementos.pop();
 
-        return lastState;
+        return mementos.getFirst();
     }
 }

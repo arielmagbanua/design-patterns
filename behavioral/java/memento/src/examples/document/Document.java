@@ -14,7 +14,7 @@ public class Document {
         fontName = state.getFontName();
         fontSize = state.getFontSize();
     }
-    
+
     public String getContent() {
         return content;
     }
