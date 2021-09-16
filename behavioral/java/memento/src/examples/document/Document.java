@@ -5,11 +5,11 @@ public class Document {
     private String fontName;
     private int fontSize;
 
-    public DocumentState createState() {
-        return new DocumentState(content, fontName, fontSize);
+    public DocumentMemento createState() {
+        return new DocumentMemento(content, fontName, fontSize);
     }
 
-    public void restore(DocumentState state) {
+    public void restore(DocumentMemento state) {
         content = state.getContent();
         fontName = state.getFontName();
         fontSize = state.getFontSize();
