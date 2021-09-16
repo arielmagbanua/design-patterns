@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class DocumentHistory {
+    // memento stack
     private final Deque<DocumentMemento> mementos = new ArrayDeque<>();
 
     public void push(DocumentMemento memento) {

@@ -35,7 +35,6 @@ public class App {
          document.setContent("Hello Universe!");
          document.setFontName("Roboto");
          document.setFontSize(18);
-         documentHistory.push(document.createState());
 
          System.out.println(document);
          document.restore(documentHistory.undo());
