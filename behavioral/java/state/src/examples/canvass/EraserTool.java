@@ -1,3 +1,5 @@
+package examples.canvass;
+
 public class EraserTool implements Tool {
     @Override
     public void mouseDown() {

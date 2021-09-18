@@ -9,10 +9,10 @@ public class Document {
         return new DocumentMemento(content, fontName, fontSize);
     }
 
-    public void restore(DocumentMemento state) {
-        content = state.getContent();
-        fontName = state.getFontName();
-        fontSize = state.getFontSize();
+    public void restore(DocumentMemento memento) {
+        content = memento.getContent();
+        fontName = memento.getFontName();
+        fontSize = memento.getFontSize();
     }
 
     public String getContent() {

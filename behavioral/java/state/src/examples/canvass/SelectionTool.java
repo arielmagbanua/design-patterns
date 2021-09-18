@@ -1,3 +1,5 @@
+package examples.canvass;
+
 public class SelectionTool implements Tool {
     @Override
     public void mouseDown() {
