@@ -1,3 +1,5 @@
+package examples.canvass;
+
 public class Canvas {
     private Tool currentTool;
 
