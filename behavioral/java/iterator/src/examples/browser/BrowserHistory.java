@@ -1,7 +1,6 @@
 package examples.browser;
 
-import java.util.ArrayList;
-import java.util.List;
+import examples.Iterator;
 
 public class BrowserHistory {
     private final String[] urls = new String[10];

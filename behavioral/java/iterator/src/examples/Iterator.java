@@ -1,4 +1,4 @@
-package examples.browser;
+package examples;
 
 public interface Iterator<T> {
     boolean hasNext();
