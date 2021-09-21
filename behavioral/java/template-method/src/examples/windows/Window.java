@@ -2,13 +2,13 @@ package examples.windows;
 
 public abstract class Window {
     public void close() {
-        beforeClose();
+        onClosing();
 
         System.out.println("Removing the window from the screen");
 
-        afterClose();
+        onClosed();
     }
 
-    protected abstract void beforeClose();
-    protected abstract void afterClose();
+    protected void onClosing() {}
+    protected void onClosed() {}
 }

@@ -2,12 +2,12 @@ package examples.windows;
 
 public class SpotifyWindow extends Window {
     @Override
-    protected void beforeClose() {
-        System.out.println("Stopping the currently played music...");
+    protected void onClosing() {
+        System.out.println("Stopping the currently played song...");
     }
 
     @Override
-    protected void afterClose() {
-        System.out.println("Saving the last played music...");
+    protected void onClosed() {
+        System.out.println("Saving the last played song...");
     }
 }
