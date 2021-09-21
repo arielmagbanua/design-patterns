@@ -5,7 +5,7 @@ import javax.crypto.SecretKey;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
-public abstract class EncryptionAlgorithm {
+public abstract class EncryptionAlgorithm implements Encryptor {
     protected final KeyGenerator keyGen;
 
     public EncryptionAlgorithm(String encryptionAlgorithm) throws NoSuchAlgorithmException {
@@ -30,6 +30,4 @@ public abstract class EncryptionAlgorithm {
         keyGen.init(keySize, SecureRandom.getInstanceStrong());
         return keyGen.generateKey();
     }
-
-    public abstract String encrypt(String message);
 }

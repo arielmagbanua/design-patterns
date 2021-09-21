@@ -9,11 +9,14 @@ public class App {
         // imageStorage.store("foo", new PngCompressor(), new BlackAndWhiteFilter());
 
         try {
-            var client = new ChatClient();
             var aesEncryption = new AesGcmEncryptionAlgorithm();
             var desEncryption = new DesEncryptionAlgorithm();
-            client.send("Hello Design Patterns!", aesEncryption);
-            client.send("Hello Design Patterns!", desEncryption);
+
+            var client = new ChatClient(aesEncryption);
+            client.send("Hello Design Patterns!");
+
+            client.setEncrypter(desEncryption)
+                .send("Hello Design Patterns!");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
