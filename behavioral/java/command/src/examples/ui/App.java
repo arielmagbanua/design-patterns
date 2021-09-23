@@ -4,9 +4,8 @@ import examples.ui.composite.BlackAndWhiteCommand;
 import examples.ui.composite.CompositeCommand;
 import examples.ui.composite.ResizeCommand;
 import examples.ui.editor.BoldCommand;
-import examples.ui.editor.History;
 import examples.ui.editor.HtmlDocument;
-import examples.ui.editor.UndoCommand;
+import examples.ui.videos.*;
 
 public class App {
     public static void main(String[] args) {
@@ -20,15 +19,28 @@ public class App {
         // composite.add(new BlackAndWhiteCommand());
         // composite.execute();
 
-        var history = new History();
-        var document = new HtmlDocument();
-        document.setContent("Hello World");
+        // var history = new History();
+        // var document = new HtmlDocument();
+        // document.setContent("Hello World");
 
-        var boldCommand = new BoldCommand(document, history);
-        boldCommand.execute();
-        System.out.println(document.getContent());
+        // var boldCommand = new BoldCommand(document, history);
+        // boldCommand.execute();
+        // System.out.println(document.getContent());
+        // var undoCommand = new UndoCommand(history);
+        // undoCommand.execute();
+        // System.out.println(document.getContent());
+
+        var history = new History();
+        var editor = new VideoEditor();
+
+        var setTextCommand = new SetTextCommand("Hello Java!", editor, history);
+        setTextCommand.execute();
+        System.out.println(editor);
+        var setContrastCommand = new SetContrastCommand(1.0f, editor, history);
+        setContrastCommand.execute();
+        System.out.println(editor);
         var undoCommand = new UndoCommand(history);
         undoCommand.execute();
-        System.out.println(document.getContent());
+        System.out.println(editor);
     }
 }
