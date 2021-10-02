@@ -1,9 +1,18 @@
 package examples.ui;
 
-public class UIControl {
-    protected final DialogBox owner;
+import java.util.ArrayList;
+import java.util.List;
 
-    public UIControl(DialogBox owner) {
-        this.owner = owner;
+public abstract class UIControl {
+    private final List<EventHandler> eventHandlers = new ArrayList<>();
+
+    public void addEventHandler(EventHandler eventHandler) {
+        eventHandlers.add(eventHandler);
+    }
+
+    protected void notifyEventHandlers() {
+        for (var observer : eventHandlers) {
+            observer.handle();
+        }
     }
 }

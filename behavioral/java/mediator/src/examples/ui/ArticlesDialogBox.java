@@ -1,9 +1,14 @@
 package examples.ui;
 
-public class ArticlesDialogBox extends DialogBox {
-    private final ListBox articlesListBox = new ListBox(this);
-    private final TextBox titleTextBox = new TextBox(this);
-    private final Button saveButton = new Button(this);
+public class ArticlesDialogBox {
+    private final ListBox articlesListBox = new ListBox();
+    private final TextBox titleTextBox = new TextBox();
+    private final Button saveButton = new Button();
+
+    public ArticlesDialogBox() {
+        articlesListBox.addEventHandler(this::articlesSelected);
+        titleTextBox.addEventHandler(this::titleChanged);
+    }
 
     public void selectArticle(String article){
         articlesListBox.setSelection(article);
@@ -11,15 +16,6 @@ public class ArticlesDialogBox extends DialogBox {
 
     public void setTitle(String content) {
         titleTextBox.setContent(content);
-    }
-
-    @Override
-    public void changed(UIControl control) {
-        if (control == articlesListBox) {
-            articlesSelected();
-        } else if (control == titleTextBox) {
-            titleChanged();
-        }
     }
 
     private void articlesSelected() {
